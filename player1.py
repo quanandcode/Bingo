@@ -39,23 +39,7 @@ timer = Label(window, image=timer_img, compound=CENTER, font=("Comic Sans MS", 4
 # CALL timer
 # timer.config(text="00:01")
 timer.place(x=25, y=25+(100+25))
-#time coutdown
-def coutdown(timer):
-    minute = StringVar()
-    second = StringVar()
 
-    temp = 5 * 60
-    while (temp > -1):
-        mins, secs = divmod(temp, 60)
-        minute.set("{0:2d}".format(mins))
-        second.set("{0:2d}".format(secs))
-        timer.config(text= str(mins)+":"+str(secs) )
-        window.update()
-        time.sleep(1)
-        if (temp == 0):
-            messagebox.showinfo("Time Countdown", "Time's up ")
-        temp -= 1
-    return 0
 
 
 ###########################################################################
@@ -169,5 +153,4 @@ for row in range(5):
         x, y = nums_locate[row][col]
         num = nums[row][col]
         num.place(x=x, y=y)
-coutdown(timer)
 window.mainloop()
